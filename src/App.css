@@ -49,6 +49,10 @@
   background-color: #1a1a1a;
 }
 
+.noPointer {
+  pointer-events: none;
+}
+
 .true {
   border-color: lightgreen;
 }

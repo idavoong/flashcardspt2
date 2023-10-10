@@ -4,8 +4,10 @@ import { useState } from "react";
 function App() {
   const [card, setCard] = useState(0);
   const [flip, setFlip] = useState(false);
+  const [allowInput, setAllowInput] = useState("");
   const [answer, setAnswer] = useState("");
   const [correct, setCorrect] = useState("");
+  const [streak, setStreak] = useState(0);
   const data = [
     { q: "What has more energy ADP ot ATP?", a: "ATP" },
     { q: "How many chromosomes are in all human cells?", a: "46" },
@@ -30,6 +32,11 @@ function App() {
     },
   ];
 
+  const handleFlip = () => {
+    setFlip(!flip);
+    setAllowInput("noPointer");
+  }
+
   const handlePrevCard = () => {
     if (card == 0) {
       setCard(data.length - 1);
@@ -38,6 +45,8 @@ function App() {
     }
     setFlip(false);
     setCorrect("");
+    setAnswer("");
+    setAllowInput("");
   };
 
   const handleNextCard = () => {
@@ -48,6 +57,8 @@ function App() {
     }
     setFlip(false);
     setCorrect("");
+    setAnswer("");
+    setAllowInput("");
   };
 
   const handleAnswer = (e) => {
@@ -58,8 +69,10 @@ function App() {
     e.preventDefault();
     if (answer == data[card].a) {
       setCorrect("true");
+      setStreak(streak + 1);
     } else {
       setCorrect("false");
+      setStreak(0);
     }
   };
 
@@ -68,9 +81,10 @@ function App() {
       <h1>General Biology Flashcards</h1>
       <h3>Test your knowledge on general biology!</h3>
       <h3>Number of cards: {data.length}</h3>
+      <h3>Streak: {streak}</h3>
       <div
         className={!flip ? "flashcard q" : "flashcard a"}
-        onClick={() => setFlip(!flip)}
+        onClick={handleFlip}
       >
         <div className={flip ? "hide" : "blur"}>{data[card].q}</div>
         <div className={!flip ? "hide" : "blur"}>{data[card].a}</div>
@@ -81,7 +95,7 @@ function App() {
             <strong>Guess the answer here: </strong>
           </label>
           <input
-            className={"input " + correct}
+            className={"input " + correct + allowInput}
             type="text"
             id={answer}
             value={answer}
