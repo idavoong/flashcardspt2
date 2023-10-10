@@ -1,10 +1,10 @@
-# Web Development Project 3 - *Name of App Here*
+# Web Development Project 3 - Flashcards pt. 2
 
-Submitted by: **Your Name Here**
+Submitted by: Ida Voong
 
-This web app: **insert description**
+This web app: biology flashcards
 
-Time spent: **X** hours spent in total
+Time spent: **2** hours spent in total
 
 ## Required Features
 
