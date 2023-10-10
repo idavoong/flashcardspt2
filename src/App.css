@@ -1,0 +1,75 @@
+#root {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.flashcard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+  height: 20rem;
+  margin: auto;
+  border-radius: 2px;
+  border-color: black;
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px #0000004d;
+  background-color: white;
+  color: black;
+  font-weight: 500;
+}
+
+.flashcard:hover {
+  box-shadow: 0 0 5px 2px #00000080;
+}
+
+.hide {
+  display: none;
+}
+
+.q {
+  background-image: url('assets/backgroundq.png');
+}
+
+.a {
+  background-image: url('assets/backgroundthumb.jpg');
+  background-position: center;
+  background-size: 350px;
+  background-repeat: no-repeat;
+}
+
+.blur {
+  padding: 2rem;
+  backdrop-filter: blur(5px) opacity(50%) drop-shadow(4px 4px 10px rgba(134, 134, 134, 0.144))contrast(100%) grayscale(30%)saturate(80%);
+  border-radius: 4rem;
+}
+
+.input {
+  background-color: #1a1a1a;
+}
+
+.true {
+  border-color: lightgreen;
+}
+
+.false {
+  border-color: red;
+}
+
+.navigation {
+  margin-top: 1rem;
+}
+
+.button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  margin: 0.5rem;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
